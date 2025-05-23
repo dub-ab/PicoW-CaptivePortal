@@ -1,0 +1,19 @@
+# Prevent accidentally tracking sensitive credentials
+wifi.creds  # Only needed if copied to your local directory
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code settings (optional, prevents editor-specific metadata)
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Micropython workspace files (if needed)
+.micropico/
