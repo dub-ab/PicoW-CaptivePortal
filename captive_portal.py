@@ -25,8 +25,11 @@ class CaptivePortal:
         self.sta_if = network.WLAN(network.STA_IF)
         self.ap_if = network.WLAN(network.AP_IF)
 
+        self.mac_raw = self.ap_if.config("mac")
+
         if essid is None:
-            essid = b"pico-%s" % binascii.hexlify(self.ap_if.config("mac")[-3:])
+            self.mac_hex = binascii.hexlify(self.mac_raw).decode()
+            essid = f"Pico-{self.mac_hex[-6:]}"  # Use last 6 
         self.essid = essid
         
         self.ssid = None
